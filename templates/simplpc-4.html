@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        hr {
+            width: 90%;
+            height: 5%;
+            color: black;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            border: 2px solid rgb(51, 51, 51);
+        }
+
+        .custom {
+  font-family: Georgia;
+  color: rgb(34, 34, 100);
+  font-size:30px;
+   font-weight: 900;
+   text-align: center;
+}
+
+
+        .vl {
+            border-left: 3px solid rgb(232, 232, 232);
+
+            height: 700px;
+            position: absolute;
+            left: 30%;
+            margin-left: -3px;
+            top: 60px;
+        }
+
+        .vl2 {
+            border-left: 3px solid rgb(232, 232, 232);
+            height: 700px;
+            position: absolute;
+            left: 60%;
+            margin-left: -3px;
+            top: 60px;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns:  50% 50%;
+
+
+            grid-gap: 35px;
+            background-color: #fff;
+            color: #444;
+
+
+        }
+
+        div.card {
+            border: 0.4em solid rgb(200, 200, 200);
+            border-radius: 12px;
+            width: 80%;
+            height: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            background-color: rgb(215, 240, 249,0.8);
+        }
+
+        div.bar {
+            border: 0.4em solid rgb(200, 200, 200);
+            border-radius: 12px;
+            width: 100%;
+            height: 100px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            background-color: rgb(215, 240, 249);
+        }
+
+        div.bar2 {
+            border: 0.4em solid rgb(200, 200, 200);
+            border-radius: 12px;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            background-color: rgb(215, 240, 249);
+        }
+
+        div.card3 {
+  width: 80%;
+  height: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: rgb(200,200,200,0.8);
+}
+
+
+        div.header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+        }
+
+        div.container {
+            width: 85%;
+            background-color: rgb(172, 213, 236);
+            padding: 40px;
+        }
+
+        div.container2 {
+            width: 85%;
+            background-color: rgb(215, 240, 249);
+            padding: 20px;
+        }
+
+
+        .box {
+            width: 90%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+
+            padding: 35px;
+            border: 2px solid #fff;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+            text-decoration-color: black;
+        }
+
+        .button {
+            font-size: 1em;
+            padding: 10px;
+            color: black;
+            border: 2px solid rgba(0, 255, 0, 0.2);
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        .button:hover {
+            background: #06D85F;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup {
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup .close:hover {
+            color: #06D85F;
+        }
+
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 700px) {
+            .box {
+                width: 70%;
+            }
+
+            .popup {
+                width: 70%;
+            }
+        }
+
+        .star-rating {
+            direction: rtl;
+            display: inline-block;
+            padding: 20px
+        }
+
+        .star-rating input[type=radio] {
+            display: none
+        }
+
+        .star-rating label {
+            color: #bbb;
+            font-size: 18px;
+            padding: 0;
+            cursor: pointer;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input[type=radio]:checked ~ label {
+            color: #f2b600
+        }
+
+        .checked {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://galusaustralis.com/wp-content/uploads/2020/09/%EF%BB%BFAI-in-Medical-Imaging-Diagnosis.png');">
+
+<center>
+    <span class="mu-header-dot"></span>
+    <br>
+    <div class='card'>
+    <div class='row'>
+      <br>
+      <br>
+      <p class="custom">GRAD-CAM Visualization</p>
+      <img src="data:image/jpeg;base64,{{ gradcam }}" alt="Girl in a jacket" style="width:400px;height:400px;">
+    </div>
+          <br>
+    <hr>
+    <div class="row">
+            <p class="custom">Class Predictions</p>
+            <br>
+
+      </div>
+      <center>
+          <div id="piechart"></div>
+
+  		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script type="text/javascript">
+			object = JSON.parse({{ object | tojson }})
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart);
+
+
+        function drawChart()
+        {
+            var data = google.visualization.arrayToDataTable(object);
+            var options = {'backgroundColor':'transparent',
+            is3D:true,chartArea:{width:'100%',height:'100%'}};
+  			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  			chart.draw(data, options);
+			}
+		</script>
+      </center>
+    </div>
+</center>
+</body>
+</html>
